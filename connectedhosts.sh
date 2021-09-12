@@ -13,6 +13,7 @@ echo >> ~/.raven/.cleancookie
 while IFS=: read -r USER PASSWORD
 do
    # get the connected hosts
-   curl --user $USER:$PASSWORD --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getpeerinfo", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8766/ 2>/dev/null | grep -o '"addr":"[^"]\+"' | cut -d":" -f2-3 | sed 's/^"//;s/"$//'
-done < ~/.raven/.cleancookie
+   printf "\nConnected Hosts:\n\n"
+   curl --user $USER:$PASSWORD --data-binary '{"jsonrpc": "1.0", "id":"curltest", "method": "getpeerinfo", "params": [] }' -H 'content-type: text/plain;' http://127.0.0.1:8766/ 2>/dev/null | grep -o '"addr":"[^"]\+"' | cut -d":" -f2-3 | sed 's/^"//;s/"$//' | tee >(printf " \nTotal Connections: $(wc -l)\n\n")
+   done < ~/.raven/.cleancookie
 
