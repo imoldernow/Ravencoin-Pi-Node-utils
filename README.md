@@ -8,4 +8,4 @@ The difference should not be more than a few minutes. If it is, check ~/.raven/d
 
 connectedhosts.sh
 This shows the IP addresses and ports of hosts that are connected to ravend. 
-IP addresses that show a port different than 8767 are inbound connections.
+This also shows the connected hosts clients information, if the connection is inbound/outbound, and the amount of data transfered to each host
