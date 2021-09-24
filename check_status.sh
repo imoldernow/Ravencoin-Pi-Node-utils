@@ -1,6 +1,6 @@
 #!/bin/bash
 ########################################
-###Based on file by Mynima and Jeroz_###
+###Based on file by Jeroz and Mynima####
 ########################################
 
 if pgrep -x "ravend" >/dev/null; 
